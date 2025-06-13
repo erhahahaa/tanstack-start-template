@@ -1,0 +1,9 @@
+**/build
+**/public
+pnpm-lock.yaml
+routeTree.gen.ts
+.nitro
+.output
+.tanstack
+.turbo
+node_modules

@@ -1,17 +1,28 @@
 /// <reference types="vite/client" />
-import * as React from 'react'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import {
   HeadContent,
-  Link,
   Outlet,
   Scripts,
-  createRootRoute,
+  createRootRoute
 } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import * as React from 'react'
 import appCss from '~/styles/app.css?url'
 
 export const Route = createRootRoute({
   head: () => ({
+    meta: [
+      {
+        charSet: "utf-8",
+      },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
+      },
+      {
+        title: "TanStack Start Starter",
+      },
+    ],
     links: [{ rel: 'stylesheet', href: appCss }],
   }),
   component: RootComponent,
@@ -32,11 +43,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="p-2 flex gap-2 text-lg">
-          <Link to="/">Index</Link>
-          <Link to="/about">About</Link>
-        </div>
-
         {children}
         <TanStackRouterDevtools position="bottom-right" />
         <Scripts />

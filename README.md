@@ -1,0 +1,1 @@
+# Minimal Tanstack Start example
